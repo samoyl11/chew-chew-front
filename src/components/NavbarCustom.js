@@ -45,7 +45,7 @@ const NavbarCustom = (props) => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <Button class="w3-button w3-block" style={{'margin-left': '100pt', 'width': '35vw'}}  color="warning">Оставить заявку</Button>{' '}
+            <Button class="w3-button w3-block" style={{'margin-left': '8vw',  'width': '45vw'}}  color="warning">Оставить заявку</Button>{' '}
           </Nav>
         </Collapse>
       </Navbar>
