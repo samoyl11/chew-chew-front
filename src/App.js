@@ -1,5 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Button, Div} from "react";
+import { Container} from 'reactstrap';
+  import{
+    Navbar, Nav, NavDropdown, FormControl, Form
+  } from 'react-bootstrap';
     import Modal from "./components/Modal";
+    import NavbarCustom from "./components/NavbarCustom";
     import axios from "axios";
 
     class App extends Component {
@@ -113,8 +118,11 @@ import React, { Component } from "react";
       };
       render() {
         return (
-          <main className="content">
-            <h1 className="text-white text-uppercase text-center my-4">Form app</h1>
+          <div className="content">
+            <div>
+              <NavbarCustom/>
+            </div>
+            <h1 className="text-white text-uppercase text-center my-4">FORM APP</h1>
             <div className="row ">
               <div className="col-md-6 col-sm-10 mx-auto p-0">
                 <div className="card p-3">
@@ -137,7 +145,7 @@ import React, { Component } from "react";
                 onSave={this.handleSubmit}
               />
             ) : null}
-          </main>
+          </div>
         );
       }
     }
