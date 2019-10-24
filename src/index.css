@@ -25,3 +25,19 @@ body {
   background-color: #282c34;
   color: #ffffff;
 }
+
+.custom1 {
+  background-color: #ffffff;
+}
+
+#container1 {
+  padding:50px;
+  background-color:#FFF;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

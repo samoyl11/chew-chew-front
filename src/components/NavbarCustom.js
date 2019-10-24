@@ -13,6 +13,13 @@ import {
   DropdownItem,
   Button} from 'reactstrap';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 const NavbarCustom = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,12 +28,16 @@ const NavbarCustom = (props) => {
   return (
     <div>
       <Navbar style={{backgroundColor: '#F7FF01'}}  light expand="md">
+        <Link to='/' style={{ textDecoration: 'none' }}>
         <NavbarBrand href="/">Подключение к таксопарку</NavbarBrand>
+        </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">О нас</NavLink>
+              <Link to='/' style={{ textDecoration: 'none' }}>
+                <NavLink>О нас</NavLink>
+              </Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -45,7 +56,9 @@ const NavbarCustom = (props) => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <Button class="w3-button w3-block" style={{'margin-left': '8vw',  'width': '45vw'}}  color="warning">Оставить заявку</Button>{' '}
+            <Link to='/apply' style={{ textDecoration: 'none' }}>
+            <Button class="w3-button w3-block" style={{'width': '50vw'}}  color="warning">Оставить заявку</Button>
+            </Link>
           </Nav>
         </Collapse>
       </Navbar>

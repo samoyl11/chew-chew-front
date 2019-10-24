@@ -1,11 +1,17 @@
 import React, { Component, Button, Div} from "react";
 import { Container} from 'reactstrap';
-  import{
-    Navbar, Nav, NavDropdown, FormControl, Form
-  } from 'react-bootstrap';
-    import Modal from "./components/Modal";
-    import NavbarCustom from "./components/NavbarCustom";
-    import axios from "axios";
+import{ Navbar, Nav, NavDropdown, FormControl, Form } from 'react-bootstrap';
+import Modal from "./components/Modal";
+import NavbarCustom from "./components/NavbarCustom";
+import Chart from "./components/Chart";
+import axios from "axios";
+import Vitya from "./vitya.jpg";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
     class App extends Component {
       constructor(props) {
@@ -118,34 +124,47 @@ import { Container} from 'reactstrap';
       };
       render() {
         return (
-          <div className="content">
-            <div>
-              <NavbarCustom/>
-            </div>
-            <h1 className="text-white text-uppercase text-center my-4">FORM APP</h1>
-            <div className="row ">
-              <div className="col-md-6 col-sm-10 mx-auto p-0">
-                <div className="card p-3">
-                  <div className="">
-                    <button onClick={this.createItem} className="btn btn-primary">
-                      Add task
-                    </button>
+          <Router>
+              <div>
+                <NavbarCustom/>
+              </div>
+
+              <Switch>
+              <Route path="/apply">
+              <h1 className="text-white text-uppercase text-center my-4">Заявка</h1>
+              <div className="row">
+                <div className="col-md-6 col-sm-10 mx-auto p-0 ">
+                  <div className="card p-3 custom1">
+                    <div className="">
+                      <button onClick={this.createItem} className="btn btn-primary">
+                        Add task
+                      </button>
+                    </div>
+                    {this.renderTabList()}
+                    <ul className="list-group list-group-flush">
+                      {this.renderItems()}
+                    </ul>
                   </div>
-                  {this.renderTabList()}
-                  <ul className="list-group list-group-flush">
-                    {this.renderItems()}
-                  </ul>
                 </div>
               </div>
-            </div>
-            {this.state.modal ? (
-              <Modal
-                activeItem={this.state.activeItem}
-                toggle={this.toggle}
-                onSave={this.handleSubmit}
-              />
-            ) : null}
-          </div>
+              {this.state.modal ? (
+                <Modal
+                  activeItem={this.state.activeItem}
+                  toggle={this.toggle}
+                  onSave={this.handleSubmit}
+                />
+              ) : null}
+              </Route>
+              <Route path="/">
+              <h1 style={{ color: 'white' }}>
+                О нас
+              </h1>
+              <div>
+              <img style={{'width':'20vw'}}src={Vitya} class='center'/>
+              </div>
+              </Route>
+              </Switch>
+          </Router>
         );
       }
     }
