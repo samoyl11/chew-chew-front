@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "homepage": "./",
   "private": true,
-  "proxy": "https://chew-chew.herokuapp.com",
   "engines": {
     "npm": "6.9.0",
     "node": "10.16.3"
