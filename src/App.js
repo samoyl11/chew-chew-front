@@ -1,10 +1,13 @@
 import React, { Component, Button, Div} from "react";
 import { Container} from 'reactstrap';
 import{ Navbar, Nav, NavDropdown, FormControl, Form } from 'react-bootstrap';
+import axios from "axios";
+
 import Modal from "./components/Modal";
 import NavbarCustom from "./components/NavbarCustom";
 import Chart from "./components/Chart";
-import axios from "axios";
+import MyForm from "./components/Form";
+
 import Vitya from "./vitya.jpg";
 import {
   BrowserRouter as Router,
@@ -130,8 +133,12 @@ import {
               </div>
 
               <Switch>
+              <Route path='/form'>
+                <MyForm/>
+              </Route>
               <Route path="/apply">
-              <h1 className="text-white text-uppercase text-center my-4">Заявка</h1>
+              <h1 className="text-white text-uppercase text-center my-4">Заявка
+              </h1>
               <div className="row">
                 <div className="col-md-6 col-sm-10 mx-auto p-0 ">
                   <div className="card p-3 custom1">
@@ -156,14 +163,15 @@ import {
               ) : null}
               </Route>
               <Route path="/">
-              <h1 style={{ color: 'white' }}>
-                О нас
-              </h1>
-              <div>
-              <img style={{'width':'20vw'}}src={Vitya} class='center'/>
-              </div>
-              </Route>
+                <h1 style={{ color: 'white' }}>
+                  О нас
+                </h1>
+                <div>
+                <img style={{'width':'20vw'}}src={Vitya} class='center'/>
+                </div>
+                </Route>
               </Switch>
+
           </Router>
         );
       }

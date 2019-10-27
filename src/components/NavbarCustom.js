@@ -45,7 +45,9 @@ const NavbarCustom = (props) => {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  <Link to='/form' style={{ textDecoration: 'none' }}>
+                  <Button class="w3-button w3-block">Форма</Button>
+                  </Link>
                 </DropdownItem>
                 <DropdownItem>
                   Option 2
