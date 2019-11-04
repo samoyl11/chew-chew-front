@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "homepage": "./",
+  "proxy": "https://chew-chew-back.herokuapp.com/api/forms",
   "private": true,
   "engines": {
     "npm": "6.9.0",
