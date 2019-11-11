@@ -1,5 +1,5 @@
-# TO START THE PROJECT: 
-## `yarn`
+# TO RUN THE PROJECT: 
+## `yarn` (only for the first time)
 ## `yarn start`
 
 
