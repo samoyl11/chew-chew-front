@@ -36,23 +36,33 @@
            <ModalBody>
              <Form>
                <FormGroup>
-                 <Label for="title">Title</Label>
+                 <Label for="firstName">First Name</Label>
                  <Input
                    type="text"
-                   name="title"
-                   value={this.state.activeItem.title}
+                   name="firstName"
+                   value={this.state.activeItem.firstName}
                    onChange={this.handleChange}
-                   placeholder="Enter Form Title"
+                   placeholder="Enter First Name"
                  />
                </FormGroup>
                <FormGroup>
-                 <Label for="description">Description</Label>
+                 <Label for="description">Last Name</Label>
                  <Input
                    type="text"
-                   name="description"
-                   value={this.state.activeItem.description}
+                   name="lastName"
+                   value={this.state.activeItem.lastName}
                    onChange={this.handleChange}
-                   placeholder="Enter Form description"
+                   placeholder="Enter Last name"
+                 />
+               </FormGroup>
+               <FormGroup>
+                 <Label for="telephone">Telephone</Label>
+                 <Input
+                   type="text"
+                   name="telephone"
+                   value={this.state.activeItem.telephone}
+                   onChange={this.handleChange}
+                   placeholder="Enter Last name"
                  />
                </FormGroup>
                <FormGroup check>

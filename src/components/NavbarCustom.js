@@ -13,6 +13,8 @@ import {
   DropdownItem,
   Button} from 'reactstrap';
 
+import LocalTaxiIcon from '@material-ui/icons/LocalTaxi';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -29,38 +31,38 @@ const NavbarCustom = (props) => {
     <div>
       <Navbar style={{backgroundColor: '#F7FF01'}}  light expand="md">
         <Link to='/' style={{ textDecoration: 'none' }}>
-        <NavbarBrand href="/">Подключение к таксопарку</NavbarBrand>
+        <NavbarBrand href="/">
+          <LocalTaxiIcon style={{'font-size': '35pt'}}/>
+        </NavbarBrand>
         </Link>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <Link to='/' style={{ textDecoration: 'none' }}>
+        <Collapse isOpen={isOpen}navbar>
+          <Nav className="text-uppercase" style={{}}navbar>
+            <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
+              <Link to='/about/' style={{ textDecoration: 'none'}}>
                 <NavLink>О нас</NavLink>
               </Link>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Дополнительно
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <Link to='/form' style={{ textDecoration: 'none' }}>
-                  <Button class="w3-button w3-block">Форма</Button>
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <Link to='/apply' style={{ textDecoration: 'none' }}>
-            <Button class="w3-button w3-block" style={{'width': '50vw'}}  color="warning">Оставить заявку</Button>
-            </Link>
+            <NavItem style={{'width': '10vw'}}>
+              <Link to='/about/' style={{ textDecoration: 'none' }}>
+                <NavLink>Выплаты</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to='/apply' style={{ textDecoration: 'none' }}>
+                <Button class="w3-button w3-block" style={{'width': '50vw'}}  color="warning">ПОДКЛЮЧИТЬСЯ</Button>
+              </Link>
+            </NavItem>
+            <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
+              <Link to='/about/' style={{ textDecoration: 'none' }}>
+                <NavLink>Сервисы</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
+              <Link to='/about/' style={{ textDecoration: 'none' }}>
+                <NavLink>Требования</NavLink>
+              </Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
