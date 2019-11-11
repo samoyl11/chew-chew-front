@@ -88,12 +88,12 @@ class Apply extends React.Component {
       if (event.id) {
         console.log('alskdklq' + event.id)
         axios
-          .put(`https://chew-chew-back.herokuapp.com/api/forms/${this.state.telephone}/`, item);
+          .put(`http:/localhost:8000/api/forms/${this.state.telephone}/`, item);
         return;
       }
       console.log('alskdklq1111')
       axios
-        .post("https://chew-chew-back.herokuapp.com/api/forms/", item)
+        .post("http://localhost:8000/api/forms/", item)
       this.setState({
         firstName: '',
         lastName: '',

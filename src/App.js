@@ -45,7 +45,7 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("https://chew-chew-back.herokuapp.com/api/forms/")
+      .get("http://localhost:8000/api/forms/")
       .then(res => this.setState({ formList: res.data }))
       .catch(err => console.log(err));
   };
@@ -117,18 +117,18 @@ class App extends Component {
     if (item.id) {
       console.log('alskdklq' + item.id)
       axios
-        .put(`https://chew-chew-back.herokuapp.com/api/forms/${item.id}/`, item)
+        .put(`http://localhost:8000/api/forms/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     console.log('alskdklq1111')
     axios
-      .post("https://chew-chew-back.herokuapp.com/api/forms/", item)
+      .post("http://localhost:8000/api/forms/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`https://chew-chew-back.herokuapp.com/api/forms/${item.id}`)
+      .delete(`http://localhost:8000/api/forms/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
