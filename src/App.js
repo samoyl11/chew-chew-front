@@ -10,6 +10,7 @@ import MyForm from "./components/Form";
 import SignUp from './components/SignUp';
 import StickyFooter from './components/StickyFooter';
 import Apply from './components/Apply';
+import ApplyCpy from './components/ApplyCpy';
 import Countdown from './components/Countdown';
 import PostApply from './components/PostApply';
 import Vitya from "./vitya.jpg";
@@ -45,7 +46,7 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/forms/")
+      .get("https://chew-chew-back.herokuapp.com/api/forms/")
       .then(res => this.setState({ formList: res.data }))
       .catch(err => console.log(err));
   };
@@ -117,18 +118,18 @@ class App extends Component {
     if (item.id) {
       console.log('alskdklq' + item.id)
       axios
-        .put(`http://localhost:8000/api/forms/${item.id}/`, item)
+        .put(`https://chew-chew-back.herokuapp.com/api/forms/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     console.log('alskdklq1111')
     axios
-      .post("http://localhost:8000/api/forms/", item)
+      .post("https://chew-chew-back.herokuapp.com/api/forms/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/forms/${item.id}`)
+      .delete(`https://chew-chew-back.herokuapp.com/api/forms/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
@@ -187,7 +188,7 @@ class App extends Component {
 
 
 
-          <Route path="/apply" component={Apply}/>
+          <Route path="/apply" component={ApplyCpy}/>
           <Route path='/welcome' component={PostApply}/>
 
 
@@ -200,7 +201,7 @@ class App extends Component {
             from={{ opacity: 0 }}
             to={{ opacity: 1 }}>
             {props => <div style={props}>
-            <h1 className="text-white text-center" style={{'font-size': '24pt', 'border': '3pt ridge white', 'display': 'inline', marginLeft:'13vw', marginRight:'10vw'}}>Подключиться к Яндекс.Такси, Ситимобил, Gett, Uber</h1>
+            <h1 className="text-white text-center h2-responsive mx-auto">Подключиться к Яндекс.Такси, Ситимобил, Gett, Uber</h1>
             </div>}
           </Spring>
           </div>
