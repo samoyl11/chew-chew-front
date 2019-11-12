@@ -1,63 +1,19 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Copyright from './Utils.js';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+
 import {Button as ButtonStrap} from 'react-bootstrap';
 import {
-
-    Link as RouterLink,
     withRouter,
     Redirect
 } from "react-router-dom";
 
-import { red, blue, purple, green } from '@material-ui/core/colors'
-
 import axios from "axios"; //pass data to django
-
-const theme = createMuiTheme({
-  palette: {
-    primary: purple,
-    secondary: green,
-    error: red,
-  },
-});
-
-const useStyles = makeStyles(theme => ({
-  '@global': {
-  },
-  paper: {
-    marginTop: theme.spacing(8),
-    marginLeft: '10%',
-    marginRight: '10%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-    backgroundColor: '#ffffff'
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
 
 class Apply extends React.Component {
       constructor(props) {
@@ -70,6 +26,24 @@ class Apply extends React.Component {
           redirectWelcome: false
         };
       }
+
+      componentDidMount() {
+        // custom rule will have name 'isPasswordMatch'
+        ValidatorForm.addValidationRule('isTelephone', (value) => {
+            console.log('value: ', value)
+            if ((value[0] === '+') && (value.length === 12) && (!isNaN(value.slice(1)))) {
+              return true;
+            }
+            else if((value.length === 12) && (!isNaN(value))) {
+              return true;
+            }
+            return false;
+        });
+    }
+    componentWillUnmount() {
+        // remove rule when it is not needed
+        ValidatorForm.removeValidationRule('isTelephone');
+    }
 
       handleInputChange = (event) => {
         const target = event.target;
@@ -97,7 +71,7 @@ class Apply extends React.Component {
       if (event.id) {
         console.log('alskdklq' + event.id)
         axios
-          .put(`http:/localhost:8000/api/forms/${this.state.telephone}/`, item);
+          .put(`https://chew-chew-back.herokuapp.com/api/forms/${this.state.telephone}/`, item);
         return;
       }
       console.log('alskdklq1111')
@@ -113,7 +87,6 @@ class Apply extends React.Component {
   }
 
       render() {
-        console.log('theme' + theme)
         if (this.state.redirectWelcome === true) {
             var date = new Date()
             console.log('creating date' + date);
@@ -126,45 +99,51 @@ class Apply extends React.Component {
             <div>
               <h1 className="text-white text-uppercase text-center my-4">Подключение к такси</h1>
               <div className="row">
-                <div className="col-md-6 col-sm-10 mx-auto p-0">
+                <div className="col-md-6 col-sm-10 mx-auto p-1">
                   <div className="card p-3 custom1">
-                    <Avatar >
-                      <AccountCircleIcon color="action" style={{'font-size': '40pt'}}/>
+                    <Avatar className='mx-auto'>
+                      <AccountCircleIcon color="action" style={{'font-size': '200%'}}/>
                     </Avatar>
-                    <form onSubmit={this.handleSubmit} className='my-4'>
+                    <ValidatorForm ref='form' onSubmit={this.handleSubmit} onError={errors => console.log(errors)} className='my-4'>
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                          <TextField
+                          <TextValidator
                             name="firstName"
                             variant="outlined"
-                            required
                             fullWidth
                             id="firstName"
-                            label="Имя"
+                            validators={['required', 'matchRegexp:^[а-яА-Я]*$']}
+                            errorMessages={['Поле должно быть заполнено', 'Имя должно содержать только буквы']}
+                            label="Имя*"
                             autoFocus
                             onChange={this.handleInputChange}
+                            value={this.state.firstName}
                           />
                         </Grid>
 
                         <Grid item xs={12} sm={6}>
-                          <TextField
+                          <TextValidator
                             variant="outlined"
-                            required
                             fullWidth
-                            label="Фамилия"
+                            validators={['required', 'matchRegexp:^[а-яА-Я]*$']}
+                            errorMessages={['Поле должно быть заполнено', 'Фамилия должна содержать только буквы']}
+                            label="Фамилия*"
                             name="lastName"
                             onChange={this.handleInputChange}
+                            value={this.state.lastName}
                           />
                         </Grid>
 
                         <Grid item xs={12}>
-                          <TextField
+                          <TextValidator
                             variant="outlined"
-                            required
+                            validators={['required', 'isTelephone']}
+                            errorMessages={['Поле должно быть заполнено','Неправильный формат']}
                             fullWidth
                             name="telephone"
-                            label="Номер телефона"
+                            label="Номер телефона*"
                             onChange={this.handleInputChange}
+                            value={this.state.telephone}
                           />
                         </Grid>
 
@@ -175,8 +154,8 @@ class Apply extends React.Component {
                           />
                         </Grid>
                       </Grid>
-                        <ButtonStrap type='submit' variant='warning' block>Warning</ButtonStrap>
-                    </form>
+                        <ButtonStrap type='submit' variant='warning' block>Оставить заявку</ButtonStrap>
+                    </ValidatorForm>
                   </div>
                 </div>
               </div>
