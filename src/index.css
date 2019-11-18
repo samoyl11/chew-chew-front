@@ -263,7 +263,9 @@ body {
 /* Desktop Styles */
 @media (min-width: 961px) {
   .font-question {
-    font-size: 2.5vw; /* Red */
+    font-size: 2.2vw;
+    font-weight: bold;
+
   }
   .font-answer {
     font-size: 1.7vw;

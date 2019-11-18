@@ -12,7 +12,7 @@ class About extends React.Component {
 
   questionAnswer(q, a) {
     return (
-      <Container className='my-4 px-0 text-center' style={{background: '#FEFE25', 'border-radius': '2em'}}>
+      <Container className='my-4 px-0' style={{background: '#FEFE25', 'border-radius': '2em'}}>
         <Row>
           <Col xs={0.5}><HelpOutlineIcon className="my-3 ml-4" style={{'font-size': '70px'}}/></Col>
           <Col className='mx-1 my-auto font-question' style={{color:'black'}}>{q}</Col>
