@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Modal from "./Modal";
+
 class ShowAll extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class ShowAll extends React.Component {
       formList: []
     };
   }
-
+  
   componentDidMount() {
     this.refreshList();
   }

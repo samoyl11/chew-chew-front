@@ -30,19 +30,25 @@ class Apply extends React.Component {
       componentDidMount() {
         // custom rule will have name 'isPasswordMatch'
         ValidatorForm.addValidationRule('isTelephone', (value) => {
-            console.log('value: ', value)
-            if ((value[0] === '+') && (value.length === 12) && (!isNaN(value.slice(1)))) {
-              return true;
-            }
-            else if((value.length === 12) && (!isNaN(value))) {
-              return true;
-            }
-            return false;
+            // if ((value[0] === '+') && (value.length === 12) && (!isNaN(value.slice(1)))) {
+            //   return true;
+            // }
+            // else if((value.length === 12) && (!isNaN(value))) {
+            //   return true;
+            // }
+            // return false;
+            var regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}[\s]*$/;
+            return regex.test(value);
+        });
+        ValidatorForm.addValidationRule('isName', (value) => {
+            var regex = /^[А-Яа-я]*[\s]*$/;
+            return regex.test(value);
         });
     }
     componentWillUnmount() {
         // remove rule when it is not needed
         ValidatorForm.removeValidationRule('isTelephone');
+        ValidatorForm.removeValidationRule('isName');
     }
 
       handleInputChange = (event) => {
@@ -112,7 +118,7 @@ class Apply extends React.Component {
                             variant="outlined"
                             fullWidth
                             id="firstName"
-                            validators={['required', 'matchRegexp:^[а-яА-Я]*$']}
+                            validators={['required', 'isName']}     //'matchRegexp:^[а-яА-Я]*[\s]*$']}
                             errorMessages={['Поле должно быть заполнено', 'Имя должно содержать только буквы']}
                             label="Имя*"
                             autoFocus
@@ -125,7 +131,7 @@ class Apply extends React.Component {
                           <TextValidator
                             variant="outlined"
                             fullWidth
-                            validators={['required', 'matchRegexp:^[а-яА-Я]*$']}
+                            validators={['required', 'isName']}
                             errorMessages={['Поле должно быть заполнено', 'Фамилия должна содержать только буквы']}
                             label="Фамилия*"
                             name="lastName"

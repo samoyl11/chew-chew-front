@@ -1,11 +1,14 @@
 import React, { Component} from "react";
 
+
+// Components
 import NavbarCustom from "./components/NavbarCustom";
 import StickyFooter from './components/StickyFooter';
 import Apply from './components/Apply';
 import PostApply from './components/PostApply';
 import ShowAll from './components/ShowAll';
 import Home from './components/Home';
+import About from './components/About';
 
 import {
   BrowserRouter as Router,
@@ -26,7 +29,8 @@ class App extends Component {
           <Route path="/showall" component={ShowAll}/>
           <Route path="/apply" component={Apply}/>
           <Route path='/welcome' component={PostApply}/>
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
+          <Route path='/about' component={About}/>
         </Switch>
         <StickyFooter/>
       </Router>

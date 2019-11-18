@@ -30,7 +30,7 @@ const NavbarCustom = (props) => {
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen}navbar>
-          <Nav className="text-uppercase" style={{}}navbar>
+          <Nav className="text-uppercase" style={{}} navbar>
             <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
               <Link to='/about/' style={{ textDecoration: 'none'}}>
                 <NavLink>О нас</NavLink>
