@@ -212,7 +212,6 @@ body {
     justify-content: center;
   }
 }
-
 @media (min-width: 1200px) {
   .border-animation {
     font-size: 6em;
@@ -239,4 +238,37 @@ body {
 
 .Countdown-col-element strong{
   font-size: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+  .font-question {
+    font-size: 6vw; /* Red */
+  }
+  .font-header {
+    font-size: 50px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  .font-question {
+    font-size: 5vw; /* Red */
+  }
+  .font-header {
+    font-size: 10px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 961px) {
+  .font-question {
+    font-size: 2.5vw; /* Red */
+  }
+  .font-answer {
+    font-size: 1.7vw;
+  }
+  .font-header {
+    font-size: 50px;
+  }
 }

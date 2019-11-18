@@ -22,7 +22,7 @@ const NavbarCustom = (props) => {
 
   return (
     <div>
-      <Navbar style={{backgroundColor: '#F7FF01'}}  light expand="md">
+      <Navbar style={{backgroundColor: '#FEFE25'}}  light expand="md">
         <Link to='/' style={{ textDecoration: 'none' }}>
         <NavbarBrand href="/">
           <LocalTaxiIcon style={{'font-size': '35pt'}}/>
@@ -37,7 +37,7 @@ const NavbarCustom = (props) => {
               </Link>
             </NavItem>
             <NavItem style={{'width': '10vw'}}>
-              <Link to='/about/' style={{ textDecoration: 'none' }}>
+              <Link to='/dev/' style={{ textDecoration: 'none' }}>
                 <NavLink>Выплаты</NavLink>
               </Link>
             </NavItem>
@@ -47,12 +47,12 @@ const NavbarCustom = (props) => {
               </Link>
             </NavItem>
             <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
-              <Link to='/about/' style={{ textDecoration: 'none' }}>
+              <Link to='/dev/' style={{ textDecoration: 'none' }}>
                 <NavLink>Сервисы</NavLink>
               </Link>
             </NavItem>
             <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
-              <Link to='/about/' style={{ textDecoration: 'none' }}>
+              <Link to='/req/' style={{ textDecoration: 'none' }}>
                 <NavLink>Требования</NavLink>
               </Link>
             </NavItem>

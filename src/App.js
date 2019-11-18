@@ -9,6 +9,8 @@ import PostApply from './components/PostApply';
 import ShowAll from './components/ShowAll';
 import Home from './components/Home';
 import About from './components/About';
+import Requirements from './components/Requirements';
+import Development from './components/Development';
 
 import {
   BrowserRouter as Router,
@@ -26,11 +28,15 @@ class App extends Component {
         </div>
 
         <Switch>
-          <Route path="/showall" component={ShowAll}/>
-          <Route path="/apply" component={Apply}/>
-          <Route path='/welcome' component={PostApply}/>
+
+          <Route exact path="/showall" component={ShowAll}/>
+          <Route exact path="/apply" component={Apply}/>
+          <Route exact path='/welcome' component={PostApply}/>
           <Route exact path="/" component={Home}/>
-          <Route path='/about' component={About}/>
+          <Route exact path='/about' component={About}/>
+          <Route exact path='/req' component={Requirements}/>
+          <Route exact path='/dev' component={Development}/>
+
         </Switch>
         <StickyFooter/>
       </Router>

@@ -77,7 +77,7 @@ class Home extends React.Component {
             from={{ opacity: 0 }}
             to={{ opacity: 1 }}>
             {props => <div style={props}>
-              <h1 className="text-white text-center mx-auto" style={{'font-size': '5vw'}}>Подключиться к такси</h1>
+              <h1 className="text-white text-center mx-auto font-header">Подключиться к такси</h1>
                       </div>}
           </Spring>
         </div>

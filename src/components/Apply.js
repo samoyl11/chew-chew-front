@@ -103,7 +103,7 @@ class Apply extends React.Component {
         }
         return (
             <div>
-              <h1 className="text-white text-uppercase text-center my-4">Подключение к такси</h1>
+              <h1 className="text-white text-uppercase text-center my-4 font-header">Подключение к такси</h1>
               <div className="row">
                 <div className="col-md-6 col-sm-10 mx-auto p-1">
                   <div className="card p-3 custom1">
