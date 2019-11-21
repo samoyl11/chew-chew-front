@@ -33,10 +33,9 @@ class Payments extends React.Component {
                       </div>}
           </Spring>
         </div>
-        {this.payment("Опыт вождения не требуется")}
-        {this.payment("Гражданство РФ или одной из стран СНГ")}
-        {this.payment("Подключаем любые автомобили")}
-
+        {this.payment("Точные и быстрые выплаты")}
+        {this.payment("Выплаты наличными")}
+        {this.payment("Выплаты на банковскую карту")}
       </div>
     )
   }
