@@ -1,6 +1,5 @@
 import React, { Component} from "react";
 
-
 // Components
 import NavbarCustom from "./components/NavbarCustom";
 import StickyFooter from './components/StickyFooter';
@@ -12,6 +11,7 @@ import About from './components/About';
 import Requirements from './components/Requirements';
 import Development from './components/Development';
 import Services from './components/Services';
+import Payments from './components/Payments';
 
 import {
   BrowserRouter as Router,
@@ -38,7 +38,8 @@ class App extends Component {
           <Route exact path='/req' component={Requirements}/>
           <Route exact path='/dev' component={Development}/>
           <Route exact path='/services' component={Services}/>
-          
+          <Route exact path='/pay' component={Payments}/>
+
         </Switch>
         <StickyFooter/>
       </Router>

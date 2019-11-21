@@ -45,7 +45,7 @@ class Home extends React.Component {
     setTimeout(() => this.showUber(), 2000);
     setTimeout(() => this.showConnect(), 2500);
     setTimeout(() => this.notify(), 2500);
-    setTimeout(() => this.notifyApply(), 8500);
+    setTimeout(() => this.notifyApply(), 85 00);
 
   }
 

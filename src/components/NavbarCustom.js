@@ -32,12 +32,12 @@ const NavbarCustom = (props) => {
         <Collapse isOpen={isOpen}navbar>
           <Nav className="text-uppercase" style={{}} navbar>
             <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
-              <Link to='/about/' style={{ textDecoration: 'none'}}>
+              <Link to='/about' style={{ textDecoration: 'none'}}>
                 <NavLink>О нас</NavLink>
               </Link>
             </NavItem>
             <NavItem style={{'width': '10vw'}}>
-              <Link to='/dev/' style={{ textDecoration: 'none' }}>
+              <Link to='/pay' style={{ textDecoration: 'none' }}>
                 <NavLink>Выплаты</NavLink>
               </Link>
             </NavItem>
