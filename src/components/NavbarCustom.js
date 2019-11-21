@@ -47,7 +47,7 @@ const NavbarCustom = (props) => {
               </Link>
             </NavItem>
             <NavItem style={{'width': '10vw', 'textAlign': 'center'}}>
-              <Link to='/dev/' style={{ textDecoration: 'none' }}>
+              <Link to='/services/' style={{ textDecoration: 'none' }}>
                 <NavLink>Сервисы</NavLink>
               </Link>
             </NavItem>

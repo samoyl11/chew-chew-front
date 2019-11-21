@@ -243,6 +243,7 @@ body {
 @media only screen and (max-width: 400px) {
   .font-question {
     font-size: 6vw; /* Red */
+    font-weight: bold;
   }
   .font-header {
     font-size: 50px;
@@ -254,6 +255,7 @@ body {
 
   .font-question {
     font-size: 5vw; /* Red */
+    font-weight: bold;
   }
   .font-header {
     font-size: 10px;

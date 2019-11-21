@@ -11,6 +11,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Requirements from './components/Requirements';
 import Development from './components/Development';
+import Services from './components/Services';
 
 import {
   BrowserRouter as Router,
@@ -36,7 +37,8 @@ class App extends Component {
           <Route exact path='/about' component={About}/>
           <Route exact path='/req' component={Requirements}/>
           <Route exact path='/dev' component={Development}/>
-
+          <Route exact path='/services' component={Services}/>
+          
         </Switch>
         <StickyFooter/>
       </Router>

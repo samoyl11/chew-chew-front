@@ -3,11 +3,10 @@ import City from "./img/city.png";
 import Yandex from "./img/yandex.png";
 import Uber from "./img/uber.png";
 import Gett from "./img/gett1.png";
-import { ReactComponent as ConnectButton } from './svg/connect.svg';
 import {Spring} from 'react-spring/renderprops';
 import { Link } from "react-router-dom";
 
-import {Container, Row, Col, Figure} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { css } from 'glamor';
@@ -40,13 +39,13 @@ class Home extends React.Component {
     });
 
   componentDidMount() {
-    setTimeout(() => this.showYandex(), 600);
-    setTimeout(() => this.showCity(), 1200);
-    setTimeout(() => this.showGett(), 1800);
-    setTimeout(() => this.showUber(), 2400);
-    setTimeout(() => this.showConnect(), 3000);
-    setTimeout(() => this.notify(), 3000);
-    setTimeout(() => this.notifyApply(), 9000);
+    setTimeout(() => this.showYandex(), 500);
+    setTimeout(() => this.showCity(), 1000);
+    setTimeout(() => this.showGett(), 1500);
+    setTimeout(() => this.showUber(), 2000);
+    setTimeout(() => this.showConnect(), 2500);
+    setTimeout(() => this.notify(), 2500);
+    setTimeout(() => this.notifyApply(), 8500);
 
   }
 

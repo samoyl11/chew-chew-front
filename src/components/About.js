@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, Figure} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import {Spring} from 'react-spring/renderprops';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
@@ -45,7 +45,6 @@ class About extends React.Component {
         {this.questionAnswer("Какая комиссия?", "Наша комиссия 2%")}
         {this.questionAnswer("Подключаем ли мы граждан СНГ?", "Да, подключаем")}
         {this.questionAnswer("Чем еще мы занимаемся? ", "Мы сдаем автомобили в аренду")}
-
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, Figure} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import {Spring} from 'react-spring/renderprops';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
